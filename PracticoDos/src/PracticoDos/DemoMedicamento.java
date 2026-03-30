@@ -25,8 +25,14 @@ class Medicamento {
     }
     public int getDiasDeValidez() {
         long dias = ChronoUnit.DAYS.between(LocalDate.now(), this.fechaVencimiento);
-
         return dias <= 0 ? 0 : (int) dias;
+
+//        if (dias <= 0) {
+//            return 0;
+//        } else {
+//            return (int) dias;
+//        }
+
     }
 
     @Override
@@ -81,11 +87,15 @@ public class DemoMedicamento {
         System.out.println("\n--- LISTA DE MEDICAMENTOS ---");
         for (Medicamento m : medicamentos) {
             System.out.println(m.toString());
+//            System.out.println(m.getPresentacion());
+//            System.out.println(m.getDiasDeValidez());
         }
 
         Medicamento maxValidez = medicamentos[0];
         for (int i = 1; i < medicamentos.length; i++) {
             if (medicamentos[i].getDiasDeValidez() > maxValidez.getDiasDeValidez()) {
+                System.out.println("nombre med nuevo " + i +": " + medicamentos[i].getNombre());
+                System.out.println("nombre med viejo " + i +": " + maxValidez.getNombre());
                 maxValidez = medicamentos[i];
             }
         }
