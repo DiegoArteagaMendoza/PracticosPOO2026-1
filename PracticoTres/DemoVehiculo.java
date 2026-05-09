@@ -66,7 +66,7 @@ public class DemoVehiculo {
                     break;
                 case 3:
                     // Se llama a la clase, no a la instancia, para modificar la marca
-                    Vehiculo.ModificarMarca("General Motors");
+                    Vehiculo.ModificarMarca("UBB");
                     System.out.println("\n[!] La marca ha sido actualizada a General Motors para toda la flota.");
                     break;
                 case 4:

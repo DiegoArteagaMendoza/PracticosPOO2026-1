@@ -24,6 +24,7 @@ public class Vehiculo {
         long dias = ChronoUnit.DAYS.between(LocalDate.now(), this.fechaPrimeraCarrera);
         int restante = (int) dias;
         return restante;
+//        System.out.println(restante);
     }
 
     public static void ModificarMarca(String nuevaMarca) {
